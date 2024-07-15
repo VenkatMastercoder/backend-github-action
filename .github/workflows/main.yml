@@ -24,13 +24,6 @@ jobs:
 
     - name: Install dependencies # Step to install Node.js dependencies
       run: npm ci # Command to install dependencies using npm ci
-
-    - name: Create .env file # Step to create .env file with production environment variables
-      run: |
-        touch .env # Create .env file
-        echo "${{ secrets.PRODUCTION_ENV_FILE }}" > .env  
-        
-      # Write production environment variable from secret to .env file
-
+      
     - name: Start application # Step to start the application
       run: pm2 restart index # Command to restart the application using pm2
