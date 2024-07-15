@@ -20,7 +20,6 @@ jobs:
       uses: actions/setup-node@v3 # Action to set up Node.js
       with:
         node-version: ${{ matrix.node-version }} # Specify the Node.js version
-        cache: 'npm' # Cache npm dependencies for faster builds
 
     - name: Install dependencies # Step to install Node.js dependencies
       run: npm ci # Command to install dependencies using npm ci
