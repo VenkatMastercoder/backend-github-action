@@ -23,8 +23,6 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          sudo lsof -i :3000
-          sudo kill -9 $(sudo lsof -t -i:3000) || true
           pm2 stop my-express-app || true
           pm2 delete my-express-app || true
           pm2 start index.js --name my-express-app
